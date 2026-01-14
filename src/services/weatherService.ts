@@ -13,6 +13,7 @@ interface GovernmentWeatherPoint {
 export class WeatherService {
     private baseUrl = 'https://api.weather.gov';
 
+    // Fetch weather point data from the government API and reshape into our own format
     async getWeatherPoint(latitude: number, longitude: number): Promise<WeatherResponse> {
         const url = `${this.baseUrl}/points/${latitude},${longitude}`;
 

@@ -20,6 +20,8 @@ interface WeatherParams {
     longitude: string;
 }
 
+// weather endpoint returns weather summary based on latitude and longitude
+// for production usage we'd likely add a caching decorator with a short TTL to avoid hitting the API too often
 app.get(
     '/weather/:latitude/:longitude',
     async (req: Request<WeatherParams>, res: Response<WeatherResponse>) => {
